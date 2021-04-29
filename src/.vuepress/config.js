@@ -1,7 +1,10 @@
 const { resolve, genSidebarConfig } = require('./utils/index')
 const { description } = require('../../package')
 
-const siderBarOptions = { hasSub: true, exclude: ['README.md', 'assets', '.DS_Store', 'docs', 'images'] }
+const siderBarOptions = {
+  hasSub: true,
+  exclude: ['README.md', 'assets', '.DS_Store', 'docs', 'images']
+}
 
 const nav = [
   {
@@ -259,11 +262,17 @@ const nav = [
 ]
 
 const sidebar = {
-  '/basic/':[{
-    title: 'Koa',
-    collapsable: false,
-    children: genSidebarConfig('basic/node', siderBarOptions)
-  }],
+  '/basic/': [
+    {
+      title: 'Koa',
+      collapsable: false,
+      children: genSidebarConfig('basic/node', siderBarOptions)
+    },{
+      title: 'TypeScript',
+      collapsable: false,
+      children: genSidebarConfig('basic/ts', siderBarOptions)
+    }
+  ],
   '/project/': [
     {
       title: '小程序',
@@ -273,9 +282,7 @@ const sidebar = {
     {
       title: 'React',
       collapsable: false,
-      children: [
-        'react/'
-      ]
+      children: ['react/']
     }
   ],
   '/course/': [
